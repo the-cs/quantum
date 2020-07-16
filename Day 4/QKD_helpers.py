@@ -1,4 +1,12 @@
 import binascii
+from qutip import *
+from qiskit import execute, Aer, IBMQ, QuantumCircuit
+
+def mystery_state_circuit():
+	qc = QuantumCircuit(1,1)
+	qc.x(0)
+	qc.h(0)
+	return qc
 
 def text_to_bits(text, encoding='utf-8', errors='surrogatepass'):
     bits = bin(int(binascii.hexlify(text.encode(encoding, errors)), 16))[2:]
